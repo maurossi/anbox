@@ -29,7 +29,7 @@ sudo $workdir/uidmapshift -b $rootfs 0 100000 65536
 sudo cp $(dirname $(readlink -f $0))/anbox-init.sh $rootfs/anbox-init.sh
 sudo chmod +x $rootfs/anbox-init.sh
 
-sudo mksquashfs $rootfs android.img -comp xz -no-xattrs
+sudo mksquashfs $rootfs android.img -comp xz -no-xattrs -noappend
 sudo chown $USER:$USER android.img
 
 sudo rm -rf $workdir
